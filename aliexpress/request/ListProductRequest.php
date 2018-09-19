@@ -27,6 +27,18 @@ class ListProductRequest extends Request
      */
     private $keywords;
     
+     /**
+     * Lower case,total 17 languages supported(en,pt,ru,es,fr,id,it,nl,tr,vi,th,de,ko,ja,ar,pl,he)
+     * @var string
+     */
+    private $language;
+
+    /**
+     * Local Currency i.e. USD, RUB, GBP, BRL, CAD, AUD, EUR, INR, UAH, JPY, MXN, IDR, TRY, SEK
+     * @var string
+     */
+    private $localCurrency;
+    
     /**
      * The category ID for the products. Add the level-1 category description 
      * below for your reference. 
@@ -125,6 +137,16 @@ class ListProductRequest extends Request
         return $this->categoryId;
     }
 
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    public function getLocalCurrency()
+    {
+        return $this->localCurrency;
+    }
+    
     public function getCommissionRateFrom()
     {
         return $this->commissionRateFrom;
@@ -190,6 +212,16 @@ class ListProductRequest extends Request
         $this->keywords = $keywords;
     }
 
+    public function setLanguage($language)
+    {
+        $this->language = $language;
+    }
+
+    public function setLocalCurrency($localCurrency)
+    {
+        $this->localCurrency = $localCurrency;
+    }
+    
     public function setCategoryId($categoryId)
     {
         $this->categoryId = $categoryId;
